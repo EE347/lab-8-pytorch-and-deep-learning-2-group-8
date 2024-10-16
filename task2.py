@@ -37,7 +37,7 @@ if __name__ == '__main__':
     test_losses = []
 
     # Epoch Loop
-    for epoch in range(1, 100):
+    for epoch in range(1):
 
         # Start timer
         t = time.time_ns()
@@ -111,10 +111,10 @@ if __name__ == '__main__':
         # Update the best model
         if train_loss < best_train_loss:
             best_train_loss = train_loss
-            torch.save(model.state_dict(), 'lab8/best_model.pth')
+            torch.save(model.state_dict(), 'best_model.pth')
 
         # Save the model
-        torch.save(model.state_dict(), 'lab8/current_model.pth')
+        torch.save(model.state_dict(), 'current_model.pth')
 
         # Create the loss plot
         plt.plot(train_losses, label='Train Loss')
@@ -122,4 +122,4 @@ if __name__ == '__main__':
         plt.xlabel('Epoch')
         plt.ylabel('Loss')
         plt.legend()
-        plt.savefig('lab8/task2_loss_plot.png')
+        plt.savefig('task2_loss_plot.png')
